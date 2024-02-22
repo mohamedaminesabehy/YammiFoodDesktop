@@ -1,0 +1,37 @@
+/* styleaffichageRecette.css */
+
+.root {
+    -fx-background-color: #f4f4f4; /* Set the background color */
+}
+
+.title-label {
+    -fx-font-family: 'Arial', sans-serif;
+    -fx-font-size: 24px;
+    -fx-text-fill: #333333; /* Set the text color */
+}
+
+.description-label,
+.ingredients-label,
+.steps-label,
+.username-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #555555; /* Set the text color */
+    -fx-wrap-text: true; /* Enable text wrapping */
+    -fx-max-width: 600px; /* Set a maximum width for the labels */
+    -fx-line-spacing: 5px; /* Set the spacing between lines */
+    -fx-padding: 5px;
+}
+
+.image-view {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.0, 0, 5);
+}
+
+.media-view {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0.0, 0, 5);
+}
+
+#printButton {
+    -fx-background-color: #4CAF50; /* Green background color for the button */
+    -fx-text-fill: white; /* White text color for the button text */
+    -fx-font-size: 16px;
+}

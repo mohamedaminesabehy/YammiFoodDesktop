@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="1315.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MesRecetteController">
+   <children>
+      <BorderPane layoutX="6.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <VBox prefHeight="810.0" prefWidth="341.0" styleClass="right-bar" stylesheets="@style.css" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="130.0" prefWidth="425.0">
+                     <children>
+                        <ImageView fx:id="id_logo" fitHeight="138.0" fitWidth="131.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/yammifood.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <Pane prefHeight="57.0" prefWidth="435.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <HBox alignment="CENTER" layoutX="46.0" layoutY="3.0" prefHeight="38.0" prefWidth="245.0" stylesheets="@style.css">
+                           <children>
+                              <TextField prefHeight="40.0" prefWidth="235.0" promptText="Type here to search" styleClass="transparent" stylesheets="@style.css">
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font name="Cambria" size="18.0" />
+                                 </font>
+                              </TextField>
+                              <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="162.0" styleClass="search-button" stylesheets="@style.css" text="Search" textFill="WHITE" />
+                           </children>
+                           <styleClass>
+                              <String fx:value="search-box" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                        </HBox>
+                        <VBox fx:id="chosenFruitCard" alignment="CENTER" layoutX="44.0" layoutY="89.0" prefHeight="543.0" prefWidth="260.0" stylesheets="@style.css">
+                           <children>
+                              <Button fx:id="id_ajouter" mnemonicParsing="false" onAction="#AfficherRecette" prefHeight="45.0" prefWidth="202.0" stylesheets="@style.css" text="Ajouter Recette" textAlignment="RIGHT">
+                                 <graphic>
+                                    <ImageView fitHeight="41.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@img/ajouter-recette.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="System Italic" size="12.0" />
+                                 </font>
+                              </Button>
+                              <HBox alignment="CENTER" prefHeight="53.0" prefWidth="335.0">
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="34.0" prefWidth="244.0">
+                                       <children>
+                                          <Separator prefHeight="0.0" prefWidth="118.0" />
+                                          <Separator prefHeight="0.0" prefWidth="118.0" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </HBox>
+                              <Button fx:id="id_recette" mnemonicParsing="false" prefHeight="62.0" prefWidth="209.0" text="Mes Recette">
+                                 <graphic>
+                                    <ImageView fitHeight="34.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@img/site-internet.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <HBox alignment="CENTER" prefHeight="53.0" prefWidth="335.0" />
+                           </children>
+                           <styleClass>
+                              <String fx:value="chosen-fruit-card" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                        </VBox>
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <VBox prefHeight="754.0" prefWidth="902.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="65.0" prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </VBox.margin>
+                     <children>
+                        <Label prefHeight="29.0" prefWidth="88.0" text="language" textFill="#6d071a">
+                           <font>
+                              <Font name="Cambria Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="29.0" prefWidth="77.0" text="Français " textFill="#6d071a" underline="true">
+                           <font>
+                              <Font name="Cambria" size="14.0" />
+                           </font>
+                        </Label>
+                        <Pane prefHeight="65.0" prefWidth="393.0" HBox.hgrow="ALWAYS" />
+                        <Label prefHeight="62.0" prefWidth="100.0" text="My Account" textFill="#6d071a">
+                           <font>
+                              <Font name="Cambria" size="18.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="50.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/homme.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="137.0" prefWidth="744.0">
+                     <children>
+                        <Pane prefHeight="137.0" prefWidth="90.0" />
+                        <Pane prefHeight="137.0" prefWidth="0.0" />
+                        <ImageView fx:id="id_imageee" fitHeight="539.0" fitWidth="931.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/img1.PNG" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="20.0" right="20.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Label alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="405.0" prefWidth="138.0" text="Mes Recettes" textFill="#6d071a">
+                           <font>
+                              <Font name="System Italic" size="24.0" />
+                           </font>
+                        </Label>
+                        <ScrollPane fx:id="scroll" prefHeight="388.0" prefWidth="789.0" styleClass="transparent" stylesheets="@style.css">
+                           <content>
+                              <GridPane fx:id="grid" prefHeight="0.0" prefWidth="0.0">
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                                 </rowConstraints>
+                              </GridPane>
+                           </content>
+                           <HBox.margin>
+                              <Insets bottom="20.0" right="10.0" top="90.0" />
+                           </HBox.margin>
+                        </ScrollPane>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

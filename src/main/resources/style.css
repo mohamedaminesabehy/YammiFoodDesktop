@@ -1,0 +1,84 @@
+.search-box{
+    -fx-background-color:#FFFFFF;
+    -fx-background-radius: 100;
+}
+
+.transparent{
+    -fx-background-color: rgba(0,0,0,0);
+}
+
+.search-button{
+    -fx-background-color: #828282;
+    -fx-background-radius: 30;
+}
+
+.right-bar{
+    -fx-background-color: #D3D3D3;
+}
+
+.shadow{
+    -fx-effect: dropShadow(three-pass-box,rgba(0,0,0,0.1), 10.0 , 0.0 , 0.0 ,10.0);
+}
+
+.chosen-fruit-card{
+    -fx-background-color: #6D071A;
+    -fx-background-radius: 30;
+}
+
+.comboBox{
+    -fx-background-color: rgba(255,255,255,0.3);
+    -fx-background-radius: 30;
+}
+
+.add-btn{
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 100;
+}
+
+.free-delivery-card{
+    -fx-background-color: #D3D3D3;
+    -fx-background-radius: 30;
+}
+
+.shopping-online-card{
+    -fx-background-color: #BAEAC3;
+    -fx-background-radius: 30;
+}
+
+.fruit-item{
+    -fx-background-color: #FFFFFF;
+        -fx-background-radius: 30;
+}
+#id_ajouter {
+    -fx-background-color: white;
+    -fx-text-fill: #6d071a; /* Text color */
+    -fx-font-size: 14px; /* Font size */
+    -fx-font-family: "Cambria";
+    -fx-font-weight: bold;
+    -fx-padding: 10 20; /* Top and bottom padding 10px, left and right padding 20px */
+    -fx-background-radius: 5; /* Rounded corners */
+    -fx-border-radius: 5;
+    -fx-border-color: #6d071a; /* Border color */
+    -fx-border-width: 2px; /* Border width */
+}
+
+#id_ajouter:hover {
+    -fx-background-color: #6d071a; /* Hover background color */
+    -fx-text-fill: white; /* Hover text color */
+}
+#id_recette{
+
+    -fx-background-color: white;
+    -fx-text-fill: #6d071a; /* Text color */
+    -fx-font-size: 14px; /* Font size */
+    -fx-font-family: "Cambria";
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+    -fx-background-radius: 5; /* Rounded corners */
+    -fx-border-radius: 5;
+    -fx-border-color: #6d071a; /* Border color */
+    -fx-border-width: 2px; /* Border width */
+}
+#id_imageee,#id_logo {
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.6) , 10, 0.0 , 0 , 1 );
+}
