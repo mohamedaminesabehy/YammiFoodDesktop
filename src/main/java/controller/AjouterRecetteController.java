@@ -44,7 +44,7 @@ public class AjouterRecetteController {
         File selectedFile = fileChooser.showOpenDialog(null);
 
         if (selectedFile != null) {
-            selectedImagePathLabel.setText("Selected Image: " + selectedFile.getAbsolutePath());
+            selectedImagePathLabel.setText(selectedFile.getAbsolutePath());
         }
     }
 
@@ -55,7 +55,7 @@ public class AjouterRecetteController {
         File selectedFile = fileChooser.showOpenDialog(null);
 
         if (selectedFile != null) {
-            selectedVideoPathLabel.setText("Selected Video: " + selectedFile.getAbsolutePath());
+            selectedVideoPathLabel.setText(selectedFile.getAbsolutePath());
         }
     }
 
@@ -90,8 +90,8 @@ public class AjouterRecetteController {
             byte[] imageBytes = getImageBytes(imagePath);
             byte[] videoBytes = getVideoBytes(videoPath);
 
-            recette.setImage(imageBytes);
-            recette.setVideo(videoBytes);
+            recette.setImage(imagePath);
+            recette.setVideo(videoPath);
             recette.setId_user(1);
 
             // Assuming you have an instance of RecetteService

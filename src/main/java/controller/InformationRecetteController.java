@@ -11,6 +11,7 @@ import services.RecetteService;
 
 import java.awt.event.ActionEvent;
 import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.IOException;
 
 public class InformationRecetteController {
@@ -35,11 +36,21 @@ public class InformationRecetteController {
         if (recette != null) {
             id_titre.setText("" + recette.getTitre());
             if (recette.getImage() != null) {
-                Image image = new Image(new ByteArrayInputStream(recette.getImage()));
-                id_img.setImage(image);
+                // Modify the path to use a File object and convert it to URL
+                String imagePath = recette.getImage();
+                File file = new File(imagePath);
+
+                try {
+                    // Convert the File to URL
+                    String imageUrl = file.toURI().toURL().toString();
+                    // Now use this URL to create the Image
+                    Image image = new Image(imageUrl);
+                    id_img.setImage(image);
+                } catch (Exception e) {
+                    e.printStackTrace();  // Handle the exception according to your needs
+                }
             }
 
         }}
-
 }
 

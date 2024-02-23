@@ -6,14 +6,14 @@ public class Recette {
     private String description;
     private String ingredients;
     private String etape;
-    private byte[] image;
-    private byte[] video;
+    private String image; // Changed type from byte[] to String
+    private String video; // Changed type from byte[] to String
     private int id_user;
 
     public Recette() {
     }
 
-    public Recette(int id, String titre, String description, String ingredients, String etape, byte[] image, byte[] video, int id_user) {
+    public Recette(int id, String titre, String description, String ingredients, String etape, String image, String video, int id_user) {
         this.id = id;
         this.titre = titre;
         this.description = description;
@@ -64,19 +64,19 @@ public class Recette {
         this.etape = etape;
     }
 
-    public byte[] getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(byte[] image) {
+    public void setImage(String image) {
         this.image = image;
     }
 
-    public byte[] getVideo() {
+    public String getVideo() {
         return video;
     }
 
-    public void setVideo(byte[] video) {
+    public void setVideo(String video) {
         this.video = video;
     }
 

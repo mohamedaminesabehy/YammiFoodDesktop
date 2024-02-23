@@ -14,6 +14,7 @@ public class RecetteService implements IService<Recette>{
     public RecetteService() {
         connexion = DataSource.getInstance().getCnx();
     }
+
     @Override
     public void add(Recette recette) {
         String requete = "INSERT INTO recette (titre, description, ingredients, etape, image, video, id_user) " +
@@ -25,8 +26,8 @@ public class RecetteService implements IService<Recette>{
             pst.setString(2, recette.getDescription());
             pst.setString(3, recette.getIngredients());
             pst.setString(4, recette.getEtape());
-            pst.setBytes(5, recette.getImage());
-            pst.setBytes(6, recette.getVideo());
+            pst.setString(5, recette.getImage());
+            pst.setString(6, recette.getVideo());
             pst.setInt(7, recette.getId_user());
             pst.executeUpdate();
         } catch (SQLException e) {
@@ -47,7 +48,6 @@ public class RecetteService implements IService<Recette>{
         }
     }
 
-
     @Override
     public void update(Recette recette) {
         String requete = "UPDATE recette SET titre = ?, description = ?, ingredients = ?, etape = ?, " +
@@ -59,15 +59,14 @@ public class RecetteService implements IService<Recette>{
             pst.setString(2, recette.getDescription());
             pst.setString(3, recette.getIngredients());
             pst.setString(4, recette.getEtape());
-            pst.setBytes(5, recette.getImage());
-            pst.setBytes(6, recette.getVideo());
+            pst.setString(5, recette.getImage());
+            pst.setString(6, recette.getVideo());
             pst.setInt(7, recette.getId());
             pst.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
-
 
     @Override
     public List<Recette> readAll() {
@@ -83,8 +82,8 @@ public class RecetteService implements IService<Recette>{
                         rs.getString("description"),
                         rs.getString("ingredients"),
                         rs.getString("etape"),
-                        rs.getBytes("image"),
-                        rs.getBytes("video"),
+                        rs.getString("image"),
+                        rs.getString("video"),
                         rs.getInt("id_user")
                 ));
             }
@@ -93,7 +92,6 @@ public class RecetteService implements IService<Recette>{
         }
         return list;
     }
-
 
     @Override
     public Recette readById(int id) {
@@ -111,8 +109,8 @@ public class RecetteService implements IService<Recette>{
                         rs.getString("description"),
                         rs.getString("ingredients"),
                         rs.getString("etape"),
-                        rs.getBytes("image"),
-                        rs.getBytes("video"),
+                        rs.getString("image"),
+                        rs.getString("video"),
                         rs.getInt("id_user")
                 );
             }
@@ -122,6 +120,4 @@ public class RecetteService implements IService<Recette>{
 
         return recette;
     }
-
-
 }

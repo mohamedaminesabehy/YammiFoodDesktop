@@ -60,6 +60,7 @@ public class AfficherRecetteController {
         alert.setContentText("Merci pour l'impression");
         alert.showAndWait();
     }
+
     private RecetteService recetteService = new RecetteService();
     private PdfExporter pdfExporter = new PdfExporter();
     List<Recette> recettes = recetteService.readAll();
@@ -70,13 +71,9 @@ public class AfficherRecetteController {
     public void initialize() {
         displayRecetteData(20);
         printButton.setOnAction(this::handlePrintButtonClick);
-
-
     }
 
-
     public void displayRecetteData(int recetteId) {
-
         Recette recette = recetteService.readById(recetteId);
 
         if (recette != null) {
@@ -86,22 +83,23 @@ public class AfficherRecetteController {
             stepsLabel.setText("" + recette.getEtape());
 
             if (recette.getImage() != null) {
-                Image image = new Image(new ByteArrayInputStream(recette.getImage()));
-                imageView.setImage(image);
+                try {
+                    String imagePath = recette.getImage();
+                    File file = new File(imagePath);
+                    String imageUrl = file.toURI().toURL().toString();
+                    Image image = new Image(imageUrl);
+                    imageView.setImage(image);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    // Handle the exception and inform the user if necessary
+                }
             }
 
-            if (recette.getVideo() != null) {
-                try {
-                    File tempFile = File.createTempFile("video", ".mp4"); // Change extension as needed
-                    Files.write(tempFile.toPath(), recette.getVideo());
-
-                    Media videoMedia = new Media(tempFile.toURI().toString());
-                    MediaPlayer mediaPlayer = new MediaPlayer(videoMedia);
-                    videoView.setMediaPlayer(mediaPlayer);
-                    mediaPlayer.play();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+            if (recette.getVideo() != null && !recette.getVideo().isEmpty()) {
+                Media videoMedia = new Media(new File(recette.getVideo()).toURI().toString());
+                MediaPlayer mediaPlayer = new MediaPlayer(videoMedia);
+                videoView.setMediaPlayer(mediaPlayer);
+                mediaPlayer.play();
             }
         }
     }
