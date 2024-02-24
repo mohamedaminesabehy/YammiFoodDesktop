@@ -1,50 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.media.MediaView?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane prefHeight="1324.0" prefWidth="717.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AfficherRecetteController">
-    <AnchorPane prefHeight="886.0" prefWidth="715.0" stylesheets="@style/styleaffichageRecette.css">
+<ScrollPane prefHeight="1324.0" prefWidth="1038.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AfficherRecetteController">
+    <AnchorPane prefHeight="1309.0" prefWidth="1032.0" style="-fx-background-color: white;">
 
         <!-- Your existing content goes here -->
         <children>
-            <Label fx:id="titleLabel" layoutX="65.0" layoutY="159.0" styleClass="title-label" text="Title: " textFill="#6d071a">
+            <Label fx:id="titleLabel" layoutX="236.0" layoutY="41.0" styleClass="title-label" text="Title: " textFill="#6d071a">
             <font>
                <Font name="Berlin Sans FB Demi Bold" size="24.0" />
             </font></Label>
-            <Label fx:id="descriptionLabel" layoutX="123.0" layoutY="238.0" styleClass="description-label" text="aaa">
+            <Label fx:id="descriptionLabel" layoutX="294.0" layoutY="132.0" styleClass="description-label" text="aaa">
             <font>
                <Font name="Franklin Gothic Demi Cond" size="12.0" />
             </font></Label>
-            <Label fx:id="ingredientsLabel" layoutX="110.0" layoutY="517.0" styleClass="ingredients-label" text="in" />
-            <Label fx:id="stepsLabel" layoutX="111.0" layoutY="706.0" styleClass="steps-label" text="step" />
+            <Label fx:id="ingredientsLabel" layoutX="305.0" layoutY="408.0" styleClass="ingredients-label" text="in" />
+            <Label fx:id="stepsLabel" layoutX="675.0" layoutY="417.0" styleClass="steps-label" text="step" />
 
             <!-- ... (modify ImageView as needed for video) -->
-            <ImageView fx:id="imageView" fitHeight="157.0" fitWidth="212.0" layoutX="234.0" layoutY="320.0" styleClass="image-view" />
-            <MediaView fx:id="videoView" disable="true" fitHeight="400.0" fitWidth="100.0" layoutX="560.0" layoutY="987.0" nodeOrientation="RIGHT_TO_LEFT" styleClass="media-view" />
-         <Label layoutX="124.0" layoutY="203.0" text="Description " textFill="#6d071a">
+            <ImageView fx:id="imageView" fitHeight="157.0" fitWidth="212.0" layoutX="770.0" layoutY="127.0" styleClass="image-view">
+            <image>
+               <Image url="@img/img1.PNG" />
+            </image></ImageView>
+            <MediaView fx:id="videoView" disable="true" fitHeight="157.0" fitWidth="212.0" layoutX="744.0" layoutY="681.0" nodeOrientation="RIGHT_TO_LEFT" styleClass="media-view" />
+         <Label layoutX="293.0" layoutY="92.0" text="Description " textFill="#6d071a">
             <font>
                <Font name="System Bold" size="18.0" />
             </font>
          </Label>
-         <Label layoutX="105.0" layoutY="485.0" text="Ingredients" textFill="#6d071a">
+         <Label layoutX="308.0" layoutY="381.0" text="Ingredients" textFill="#6d071a">
             <font>
                <Font name="Berlin Sans FB Demi Bold" size="18.0" />
             </font>
          </Label>
-         <Label layoutX="105.0" layoutY="668.0" text="Steps: " textFill="#6d071a">
+         <Label layoutX="701.0" layoutY="385.0" text="Steps: " textFill="#6d071a">
             <font>
                <Font name="Berlin Sans FB Demi Bold" size="18.0" />
             </font>
          </Label>
-            <Button fx:id="printButton" layoutX="38.0" layoutY="1005.0" mnemonicParsing="false" onAction="#handlePrintButtonClick" prefHeight="48.0" prefWidth="188.0" text="Imprimer" />
-         <Label layoutX="560.0" layoutY="944.0" text="vidéo" textFill="#6d071a">
+            <Button fx:id="printButton" layoutX="235.0" layoutY="682.0" mnemonicParsing="false" onAction="#handlePrintButtonClick" prefHeight="48.0" prefWidth="188.0" text="Imprimer" />
+         <Label layoutX="781.0" layoutY="628.0" text="vidéo" textFill="#6d071a">
             <font>
                <Font name="System Bold" size="18.0" />
             </font>
@@ -54,32 +63,99 @@
                <Image url="@img/yammifood.png" />
             </image>
          </ImageView>
-         <ImageView fitHeight="33.0" fitWidth="32.0" layoutX="79.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+         <ImageView fitHeight="33.0" fitWidth="32.0" layoutX="249.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
             <image>
                <Image url="@img/la-description.png" />
             </image>
          </ImageView>
-         <ImageView fitHeight="32.0" fitWidth="36.0" layoutX="60.0" layoutY="477.0" pickOnBounds="true" preserveRatio="true">
+         <ImageView fitHeight="32.0" fitWidth="36.0" layoutX="265.0" layoutY="376.0" pickOnBounds="true" preserveRatio="true">
             <image>
                <Image url="@img/ingredients.png" />
             </image>
          </ImageView>
-         <ImageView fitHeight="44.0" fitWidth="32.0" layoutX="60.0" layoutY="662.0" pickOnBounds="true" preserveRatio="true">
+         <ImageView fitHeight="44.0" fitWidth="32.0" layoutX="645.0" layoutY="386.0" pickOnBounds="true" preserveRatio="true">
             <image>
                <Image url="@img/pas.png" />
             </image>
          </ImageView>
-         <ImageView fitHeight="32.0" fitWidth="42.0" layoutX="619.0" layoutY="942.0" pickOnBounds="true" preserveRatio="true">
+         <ImageView fitHeight="32.0" fitWidth="42.0" layoutX="731.0" layoutY="624.0" pickOnBounds="true" preserveRatio="true">
             <image>
                <Image url="@img/vidéo.png" />
             </image>
          </ImageView>
-         <ImageView fitHeight="47.0" fitWidth="44.0" layoutX="173.0" layoutY="1007.0" pickOnBounds="true" preserveRatio="true">
+         <ImageView fitHeight="47.0" fitWidth="44.0" layoutX="370.0" layoutY="684.0" pickOnBounds="true" preserveRatio="true">
             <image>
                <Image url="@img/imprimante.png" />
             </image>
          </ImageView>
+         <AnchorPane prefHeight="1311.0" prefWidth="203.0" style="-fx-background-color: #E37A7A;" styleClass="nav-form" stylesheets="@../../../../Downloads/StudentManagementSystem-main/StudentManagementSystem-main/studentManagementSystem/src/studentmanagementsystem/dashboardDesign.css">
+            <children>
+               <Line endX="85.0" layoutX="109.0" layoutY="173.0" startX="-100.0" stroke="WHITE" />
+               <Button fx:id="home_btn" layoutX="12.0" layoutY="211.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@../../../../Downloads/StudentManagementSystem-main/StudentManagementSystem-main/studentManagementSystem/src/studentmanagementsystem/dashboardDesign.css" text="Home">
+                  <graphic>
+                     <FontAwesomeIcon fill="WHITE" glyphName="HOME" size="1.5em" />
+                  </graphic>
+               </Button>
+               <Button fx:id="addStudents_btn" layoutX="12.0" layoutY="246.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@../../../../Downloads/StudentManagementSystem-main/StudentManagementSystem-main/studentManagementSystem/src/studentmanagementsystem/dashboardDesign.css" text="Add Recette">
+                  <graphic>
+                     <FontAwesomeIcon fill="WHITE" glyphName="PLUS_CIRCLE" size="1.5em" />
+                  </graphic>
+               </Button>
+               <Button fx:id="availableCourse_btn" layoutX="12.0" layoutY="281.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@../../../../Downloads/StudentManagementSystem-main/StudentManagementSystem-main/studentManagementSystem/src/studentmanagementsystem/dashboardDesign.css" text="Mes Recettes">
+                  <graphic>
+                     <FontAwesomeIcon fill="WHITE" glyphName="BOOK" size="1.5em" />
+                  </graphic>
+               </Button>
+               <Button fx:id="studentGrade_btn" layoutX="12.0" layoutY="316.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@../../../../Downloads/StudentManagementSystem-main/StudentManagementSystem-main/studentManagementSystem/src/studentmanagementsystem/dashboardDesign.css" text="Evènements ">
+                  <graphic>
+                     <FontAwesomeIcon fill="WHITE" glyphName="CLIPBOARD" size="1.5em" />
+                  </graphic>
+               </Button>
+               <Button fx:id="logout" layoutX="12.0" layoutY="509.0" mnemonicParsing="false" stylesheets="@../../../../Downloads/StudentManagementSystem-main/StudentManagementSystem-main/studentManagementSystem/src/studentmanagementsystem/dashboardDesign.css">
+                  <graphic>
+                     <FontAwesomeIcon fill="WHITE" glyphName="SIGN_OUT" size="2em" />
+                  </graphic>
+                  <styleClass>
+                     <String fx:value="logout" />
+                     <String fx:value="shadow" />
+                  </styleClass>
+               </Button>
+               <Label layoutX="58.0" layoutY="516.0" text="Sign Out" textFill="WHITE">
+                  <font>
+                     <Font name="Tahoma" size="15.0" />
+                  </font>
+               </Label>
+               <ImageView fitHeight="126.0" fitWidth="114.0" layoutX="39.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@img/yammifood.png" />
+                  </image>
+               </ImageView>
+            </children>
+         </AnchorPane>
+         <Label layoutX="399.0" layoutY="763.0" text="Avis" textFill="#6d071a">
+            <font>
+               <Font name="Berlin Sans FB Demi Bold" size="18.0" />
+            </font>
+         </Label>
+         <TextField fx:id="id_avis" layoutX="400.0" layoutY="914.0" prefHeight="129.0" prefWidth="345.0" />
+             <Label layoutX="403.0" layoutY="826.0" prefHeight="17.0" prefWidth="135.0" text="Votre note" />
 
+                        <HBox layoutX="429.0" layoutY="846.0" prefHeight="40.0" prefWidth="260.0" spacing="5">
+   
+      
+                         <ImageView fx:id="star1" fitHeight="40" fitWidth="40" onMouseClicked="#handleStarClick" onMouseEntered="#handleStarHover" onMouseExited="#handleStarExit" />
+                <ImageView fx:id="star2" fitHeight="40" fitWidth="40" onMouseClicked="#handleStarClick" onMouseEntered="#handleStarHover" onMouseExited="#handleStarExit" />
+                <ImageView fx:id="star3" fitHeight="40" fitWidth="40" onMouseClicked="#handleStarClick" onMouseEntered="#handleStarHover" onMouseExited="#handleStarExit" />
+                <ImageView fx:id="star4" fitHeight="40" fitWidth="40" onMouseClicked="#handleStarClick" onMouseEntered="#handleStarHover" onMouseExited="#handleStarExit" />
+                <ImageView fx:id="star5" fitHeight="40" fitWidth="40" onMouseClicked="#handleStarClick" onMouseEntered="#handleStarHover" onMouseExited="#handleStarExit" />
+            </HBox>
+         <Button layoutX="668.0" layoutY="1068.0" mnemonicParsing="false" onAction="#AjouterAvis" text="soumettre" />
+         <Label layoutX="404.0" layoutY="790.0" text="Consultez nos directives communautaires concernant les avis." />
+         <Label layoutX="408.0" layoutY="889.0" text="Votre avis" />
         </children>
+      <stylesheets>
+         <URL value="@style/styleaffichageRecette.css" />
+         <URL value="@dashboardDesign.css" />
+      </stylesheets>
     </AnchorPane>
 </ScrollPane>

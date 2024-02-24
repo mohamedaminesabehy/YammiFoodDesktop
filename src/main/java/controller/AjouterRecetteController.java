@@ -87,8 +87,7 @@ public class AjouterRecetteController {
             // Add logic to handle image and video byte arrays based on file paths
             // For simplicity, let's assume you have methods getImageBytes and getVideoBytes for conversion
             // You may need to handle exceptions and implement these methods based on your requirements
-            byte[] imageBytes = getImageBytes(imagePath);
-            byte[] videoBytes = getVideoBytes(videoPath);
+
 
             recette.setImage(imagePath);
             recette.setVideo(videoPath);
@@ -111,27 +110,6 @@ public class AjouterRecetteController {
         }
     }
 
-    private byte[] getImageBytes(String imagePath) throws IOException {
-        String actualPath = imagePath.substring("Selected Image: ".length());
 
-        Path path = Paths.get(actualPath);
-        return Files.readAllBytes(path);
-    }
 
-    private byte[] getVideoBytes(String videoPath) throws IOException {
-
-        String actualPath = videoPath.substring("Selected Image: ".length());
-        Path path = Paths.get(actualPath);
-        return Files.readAllBytes(path);
-    }
-
-    private void clearForm() {
-        // Optionally, add logic to clear the form fields after adding the recipe
-        titreField.clear();
-        descriptionField.clear();
-        ingredientsField.clear();
-        etapeField.clear();
-        selectedImagePathLabel.setText("");
-        selectedVideoPathLabel.setText("");
-    }
 }

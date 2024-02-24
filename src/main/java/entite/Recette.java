@@ -6,8 +6,8 @@ public class Recette {
     private String description;
     private String ingredients;
     private String etape;
-    private String image; // Changed type from byte[] to String
-    private String video; // Changed type from byte[] to String
+    private String image;
+    private String video;
     private int id_user;
 
     public Recette() {
